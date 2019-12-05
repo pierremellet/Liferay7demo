@@ -27,16 +27,16 @@ import java.util.Date;
 
 import org.osgi.annotation.versioning.ProviderType;
 
-import servicebuilderdemo.model.Foo;
+import servicebuilderdemo.model.Product;
 
 /**
- * The cache model class for representing Foo in entity cache.
+ * The cache model class for representing Product in entity cache.
  *
  * @author Brian Wing Shun Chan
  * @generated
  */
 @ProviderType
-public class FooCacheModel implements CacheModel<Foo>, Externalizable {
+public class ProductCacheModel implements CacheModel<Product>, Externalizable {
 
 	@Override
 	public boolean equals(Object obj) {
@@ -44,13 +44,13 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 			return true;
 		}
 
-		if (!(obj instanceof FooCacheModel)) {
+		if (!(obj instanceof ProductCacheModel)) {
 			return false;
 		}
 
-		FooCacheModel fooCacheModel = (FooCacheModel)obj;
+		ProductCacheModel productCacheModel = (ProductCacheModel)obj;
 
-		if (fooId == fooCacheModel.fooId) {
+		if (productId == productCacheModel.productId) {
 			return true;
 		}
 
@@ -59,131 +59,90 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 
 	@Override
 	public int hashCode() {
-		return HashUtil.hash(0, fooId);
+		return HashUtil.hash(0, productId);
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(17);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
-		sb.append(", fooId=");
-		sb.append(fooId);
+		sb.append(", productId=");
+		sb.append(productId);
 		sb.append(", groupId=");
 		sb.append(groupId);
 		sb.append(", companyId=");
 		sb.append(companyId);
 		sb.append(", userId=");
 		sb.append(userId);
-		sb.append(", userName=");
-		sb.append(userName);
+		sb.append(", productName=");
+		sb.append(productName);
 		sb.append(", createDate=");
 		sb.append(createDate);
 		sb.append(", modifiedDate=");
 		sb.append(modifiedDate);
-		sb.append(", field1=");
-		sb.append(field1);
-		sb.append(", field2=");
-		sb.append(field2);
-		sb.append(", field3=");
-		sb.append(field3);
-		sb.append(", field4=");
-		sb.append(field4);
-		sb.append(", field5=");
-		sb.append(field5);
 		sb.append("}");
 
 		return sb.toString();
 	}
 
 	@Override
-	public Foo toEntityModel() {
-		FooImpl fooImpl = new FooImpl();
+	public Product toEntityModel() {
+		ProductImpl productImpl = new ProductImpl();
 
 		if (uuid == null) {
-			fooImpl.setUuid("");
+			productImpl.setUuid("");
 		}
 		else {
-			fooImpl.setUuid(uuid);
+			productImpl.setUuid(uuid);
 		}
 
-		fooImpl.setFooId(fooId);
-		fooImpl.setGroupId(groupId);
-		fooImpl.setCompanyId(companyId);
-		fooImpl.setUserId(userId);
+		productImpl.setProductId(productId);
+		productImpl.setGroupId(groupId);
+		productImpl.setCompanyId(companyId);
+		productImpl.setUserId(userId);
 
-		if (userName == null) {
-			fooImpl.setUserName("");
+		if (productName == null) {
+			productImpl.setProductName("");
 		}
 		else {
-			fooImpl.setUserName(userName);
+			productImpl.setProductName(productName);
 		}
 
 		if (createDate == Long.MIN_VALUE) {
-			fooImpl.setCreateDate(null);
+			productImpl.setCreateDate(null);
 		}
 		else {
-			fooImpl.setCreateDate(new Date(createDate));
+			productImpl.setCreateDate(new Date(createDate));
 		}
 
 		if (modifiedDate == Long.MIN_VALUE) {
-			fooImpl.setModifiedDate(null);
+			productImpl.setModifiedDate(null);
 		}
 		else {
-			fooImpl.setModifiedDate(new Date(modifiedDate));
+			productImpl.setModifiedDate(new Date(modifiedDate));
 		}
 
-		if (field1 == null) {
-			fooImpl.setField1("");
-		}
-		else {
-			fooImpl.setField1(field1);
-		}
+		productImpl.resetOriginalValues();
 
-		fooImpl.setField2(field2);
-		fooImpl.setField3(field3);
-
-		if (field4 == Long.MIN_VALUE) {
-			fooImpl.setField4(null);
-		}
-		else {
-			fooImpl.setField4(new Date(field4));
-		}
-
-		if (field5 == null) {
-			fooImpl.setField5("");
-		}
-		else {
-			fooImpl.setField5(field5);
-		}
-
-		fooImpl.resetOriginalValues();
-
-		return fooImpl;
+		return productImpl;
 	}
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
 		uuid = objectInput.readUTF();
 
-		fooId = objectInput.readLong();
+		productId = objectInput.readLong();
 
 		groupId = objectInput.readLong();
 
 		companyId = objectInput.readLong();
 
 		userId = objectInput.readLong();
-		userName = objectInput.readUTF();
+		productName = objectInput.readUTF();
 		createDate = objectInput.readLong();
 		modifiedDate = objectInput.readLong();
-		field1 = objectInput.readUTF();
-
-		field2 = objectInput.readBoolean();
-
-		field3 = objectInput.readInt();
-		field4 = objectInput.readLong();
-		field5 = objectInput.readUTF();
 	}
 
 	@Override
@@ -195,7 +154,7 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 			objectOutput.writeUTF(uuid);
 		}
 
-		objectOutput.writeLong(fooId);
+		objectOutput.writeLong(productId);
 
 		objectOutput.writeLong(groupId);
 
@@ -203,48 +162,24 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 
 		objectOutput.writeLong(userId);
 
-		if (userName == null) {
+		if (productName == null) {
 			objectOutput.writeUTF("");
 		}
 		else {
-			objectOutput.writeUTF(userName);
+			objectOutput.writeUTF(productName);
 		}
 
 		objectOutput.writeLong(createDate);
 		objectOutput.writeLong(modifiedDate);
-
-		if (field1 == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(field1);
-		}
-
-		objectOutput.writeBoolean(field2);
-
-		objectOutput.writeInt(field3);
-		objectOutput.writeLong(field4);
-
-		if (field5 == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(field5);
-		}
 	}
 
 	public String uuid;
-	public long fooId;
+	public long productId;
 	public long groupId;
 	public long companyId;
 	public long userId;
-	public String userName;
+	public String productName;
 	public long createDate;
 	public long modifiedDate;
-	public String field1;
-	public boolean field2;
-	public int field3;
-	public long field4;
-	public String field5;
 
 }

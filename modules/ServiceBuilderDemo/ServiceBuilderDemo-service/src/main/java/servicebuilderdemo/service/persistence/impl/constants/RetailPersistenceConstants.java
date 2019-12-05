@@ -24,7 +24,7 @@ import org.osgi.framework.FrameworkUtil;
  * @author Brian Wing Shun Chan
  * @generated
  */
-public class FOOPersistenceConstants {
+public class RetailPersistenceConstants {
 
 	public static final String BUNDLE_SYMBOLIC_NAME =
 		"servicebuilderdemo.service";
@@ -33,7 +33,8 @@ public class FOOPersistenceConstants {
 		"(origin.bundle.symbolic.name=" + BUNDLE_SYMBOLIC_NAME + ")";
 
 	static {
-		Bundle bundle = FrameworkUtil.getBundle(FOOPersistenceConstants.class);
+		Bundle bundle = FrameworkUtil.getBundle(
+			RetailPersistenceConstants.class);
 
 		if (!BUNDLE_SYMBOLIC_NAME.equals(bundle.getSymbolicName())) {
 			throw new IllegalStateException(

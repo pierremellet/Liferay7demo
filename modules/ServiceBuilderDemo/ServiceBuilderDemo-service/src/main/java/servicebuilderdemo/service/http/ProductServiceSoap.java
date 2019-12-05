@@ -18,7 +18,7 @@ import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * Provides the SOAP utility for the
- * <code>servicebuilderdemo.service.FooServiceUtil</code> service
+ * <code>servicebuilderdemo.service.ProductServiceUtil</code> service
  * utility. The static methods of this class call the same methods of the
  * service utility. However, the signatures are different because it is
  * difficult for SOAP to support certain types.
@@ -27,10 +27,10 @@ import org.osgi.annotation.versioning.ProviderType;
  * ServiceBuilder follows certain rules in translating the methods. For example,
  * if the method in the service utility returns a <code>java.util.List</code>,
  * that is translated to an array of
- * <code>servicebuilderdemo.model.FooSoap</code>. If the method in the
+ * <code>servicebuilderdemo.model.ProductSoap</code>. If the method in the
  * service utility returns a
- * <code>servicebuilderdemo.model.Foo</code>, that is translated to a
- * <code>servicebuilderdemo.model.FooSoap</code>. Methods that SOAP
+ * <code>servicebuilderdemo.model.Product</code>, that is translated to a
+ * <code>servicebuilderdemo.model.ProductSoap</code>. Methods that SOAP
  * cannot safely wire are skipped.
  * </p>
  *
@@ -52,9 +52,9 @@ import org.osgi.annotation.versioning.ProviderType;
  * </p>
  *
  * @author Brian Wing Shun Chan
- * @see FooServiceHttp
+ * @see ProductServiceHttp
  * @generated
  */
 @ProviderType
-public class FooServiceSoap {
+public class ProductServiceSoap {
 }

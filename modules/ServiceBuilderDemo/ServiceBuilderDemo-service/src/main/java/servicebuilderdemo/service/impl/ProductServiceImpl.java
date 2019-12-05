@@ -18,32 +18,33 @@ import com.liferay.portal.aop.AopService;
 
 import org.osgi.service.component.annotations.Component;
 
-import servicebuilderdemo.service.base.FooServiceBaseImpl;
+import servicebuilderdemo.service.base.ProductServiceBaseImpl;
 
 /**
- * The implementation of the foo remote service.
+ * The implementation of the product remote service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>servicebuilderdemo.service.FooService</code> interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>servicebuilderdemo.service.ProductService</code> interface.
  *
  * <p>
  * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
  * </p>
  *
  * @author Brian Wing Shun Chan
- * @see FooServiceBaseImpl
+ * @see ProductServiceBaseImpl
  */
 @Component(
 	property = {
-		"json.web.service.context.name=foo", "json.web.service.context.path=Foo"
+		"json.web.service.context.name=retail",
+		"json.web.service.context.path=Product"
 	},
 	service = AopService.class
 )
-public class FooServiceImpl extends FooServiceBaseImpl {
+public class ProductServiceImpl extends ProductServiceBaseImpl {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. Always use <code>servicebuilderdemo.service.FooServiceUtil</code> to access the foo remote service.
+	 * Never reference this class directly. Always use <code>servicebuilderdemo.service.ProductServiceUtil</code> to access the product remote service.
 	 */
 }

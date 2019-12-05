@@ -20,24 +20,24 @@ import org.osgi.framework.FrameworkUtil;
 import org.osgi.util.tracker.ServiceTracker;
 
 /**
- * Provides the remote service utility for Foo. This utility wraps
- * <code>servicebuilderdemo.service.impl.FooServiceImpl</code> and is an
+ * Provides the remote service utility for Product. This utility wraps
+ * <code>servicebuilderdemo.service.impl.ProductServiceImpl</code> and is an
  * access point for service operations in application layer code running on a
  * remote server. Methods of this service are expected to have security checks
  * based on the propagated JAAS credentials because this service can be
  * accessed remotely.
  *
  * @author Brian Wing Shun Chan
- * @see FooService
+ * @see ProductService
  * @generated
  */
 @ProviderType
-public class FooServiceUtil {
+public class ProductServiceUtil {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this class directly. Add custom service methods to <code>servicebuilderdemo.service.impl.FooServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
+	 * Never modify this class directly. Add custom service methods to <code>servicebuilderdemo.service.impl.ProductServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
 
 	/**
@@ -49,18 +49,19 @@ public class FooServiceUtil {
 		return getService().getOSGiServiceIdentifier();
 	}
 
-	public static FooService getService() {
+	public static ProductService getService() {
 		return _serviceTracker.getService();
 	}
 
-	private static ServiceTracker<FooService, FooService> _serviceTracker;
+	private static ServiceTracker<ProductService, ProductService>
+		_serviceTracker;
 
 	static {
-		Bundle bundle = FrameworkUtil.getBundle(FooService.class);
+		Bundle bundle = FrameworkUtil.getBundle(ProductService.class);
 
-		ServiceTracker<FooService, FooService> serviceTracker =
-			new ServiceTracker<FooService, FooService>(
-				bundle.getBundleContext(), FooService.class, null);
+		ServiceTracker<ProductService, ProductService> serviceTracker =
+			new ServiceTracker<ProductService, ProductService>(
+				bundle.getBundleContext(), ProductService.class, null);
 
 		serviceTracker.open();
 

@@ -11,29 +11,31 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-
-package servicebuilderdemo.model.impl;
+package servicebuilderdemo.exception;
 
 import org.osgi.annotation.versioning.ProviderType;
 
+import com.liferay.portal.kernel.exception.NoSuchModelException;
+
 /**
- * The extended model implementation for the Foo service. Represents a row in the &quot;FOO_Foo&quot; database table, with each column mapped to a property of this class.
- *
- * <p>
- * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>servicebuilderdemo.model.Foo</code> interface.
- * </p>
- *
  * @author Brian Wing Shun Chan
  */
 @ProviderType
-public class FooImpl extends FooBaseImpl {
+public class NoSuchProductException extends NoSuchModelException {
 
-	/*
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this class directly. All methods that expect a foo model instance should use the {@link servicebuilderdemo.model.Foo} interface instead.
-	 */
-	public FooImpl() {
+	public NoSuchProductException() {
+	}
+
+	public NoSuchProductException(String msg) {
+		super(msg);
+	}
+
+	public NoSuchProductException(String msg, Throwable cause) {
+		super(msg, cause);
+	}
+
+	public NoSuchProductException(Throwable cause) {
+		super(cause);
 	}
 
 }

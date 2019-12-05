@@ -18,30 +18,30 @@ import com.liferay.portal.aop.AopService;
 
 import org.osgi.service.component.annotations.Component;
 
-import servicebuilderdemo.service.base.FooLocalServiceBaseImpl;
+import servicebuilderdemo.service.base.ProductLocalServiceBaseImpl;
 
 /**
- * The implementation of the foo local service.
+ * The implementation of the product local service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>servicebuilderdemo.service.FooLocalService</code> interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>servicebuilderdemo.service.ProductLocalService</code> interface.
  *
  * <p>
  * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
  * </p>
  *
  * @author Brian Wing Shun Chan
- * @see FooLocalServiceBaseImpl
+ * @see ProductLocalServiceBaseImpl
  */
 @Component(
-	property = "model.class.name=servicebuilderdemo.model.Foo",
+	property = "model.class.name=servicebuilderdemo.model.Product",
 	service = AopService.class
 )
-public class FooLocalServiceImpl extends FooLocalServiceBaseImpl {
+public class ProductLocalServiceImpl extends ProductLocalServiceBaseImpl {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. Use <code>servicebuilderdemo.service.FooLocalService</code> via injection or a <code>org.osgi.util.tracker.ServiceTracker</code> or use <code>servicebuilderdemo.service.FooLocalServiceUtil</code>.
+	 * Never reference this class directly. Use <code>servicebuilderdemo.service.ProductLocalService</code> via injection or a <code>org.osgi.util.tracker.ServiceTracker</code> or use <code>servicebuilderdemo.service.ProductLocalServiceUtil</code>.
 	 */
 }

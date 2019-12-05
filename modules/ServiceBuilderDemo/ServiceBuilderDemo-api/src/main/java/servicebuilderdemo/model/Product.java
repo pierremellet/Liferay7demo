@@ -21,27 +21,27 @@ import com.liferay.portal.kernel.util.Accessor;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
- * The extended model interface for the Foo service. Represents a row in the &quot;FOO_Foo&quot; database table, with each column mapped to a property of this class.
+ * The extended model interface for the Product service. Represents a row in the &quot;Retail_Product&quot; database table, with each column mapped to a property of this class.
  *
  * @author Brian Wing Shun Chan
- * @see FooModel
+ * @see ProductModel
  * @generated
  */
-@ImplementationClassName("servicebuilderdemo.model.impl.FooImpl")
+@ImplementationClassName("servicebuilderdemo.model.impl.ProductImpl")
 @ProviderType
-public interface Foo extends FooModel, PersistedModel {
+public interface Product extends PersistedModel, ProductModel {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this interface directly. Add methods to <code>servicebuilderdemo.model.impl.FooImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify this interface directly. Add methods to <code>servicebuilderdemo.model.impl.ProductImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
-	public static final Accessor<Foo, Long> FOO_ID_ACCESSOR =
-		new Accessor<Foo, Long>() {
+	public static final Accessor<Product, Long> PRODUCT_ID_ACCESSOR =
+		new Accessor<Product, Long>() {
 
 			@Override
-			public Long get(Foo foo) {
-				return foo.getFooId();
+			public Long get(Product product) {
+				return product.getProductId();
 			}
 
 			@Override
@@ -50,8 +50,8 @@ public interface Foo extends FooModel, PersistedModel {
 			}
 
 			@Override
-			public Class<Foo> getTypeClass() {
-				return Foo.class;
+			public Class<Product> getTypeClass() {
+				return Product.class;
 			}
 
 		};

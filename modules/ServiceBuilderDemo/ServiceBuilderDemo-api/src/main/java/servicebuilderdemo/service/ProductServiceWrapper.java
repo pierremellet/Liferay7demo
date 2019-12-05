@@ -19,18 +19,18 @@ import com.liferay.portal.kernel.service.ServiceWrapper;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
- * Provides a wrapper for {@link FooService}.
+ * Provides a wrapper for {@link ProductService}.
  *
  * @author Brian Wing Shun Chan
- * @see FooService
+ * @see ProductService
  * @generated
  */
 @ProviderType
-public class FooServiceWrapper
-	implements FooService, ServiceWrapper<FooService> {
+public class ProductServiceWrapper
+	implements ProductService, ServiceWrapper<ProductService> {
 
-	public FooServiceWrapper(FooService fooService) {
-		_fooService = fooService;
+	public ProductServiceWrapper(ProductService productService) {
+		_productService = productService;
 	}
 
 	/**
@@ -40,19 +40,19 @@ public class FooServiceWrapper
 	 */
 	@Override
 	public String getOSGiServiceIdentifier() {
-		return _fooService.getOSGiServiceIdentifier();
+		return _productService.getOSGiServiceIdentifier();
 	}
 
 	@Override
-	public FooService getWrappedService() {
-		return _fooService;
+	public ProductService getWrappedService() {
+		return _productService;
 	}
 
 	@Override
-	public void setWrappedService(FooService fooService) {
-		_fooService = fooService;
+	public void setWrappedService(ProductService productService) {
+		_productService = productService;
 	}
 
-	private FooService _fooService;
+	private ProductService _productService;
 
 }
