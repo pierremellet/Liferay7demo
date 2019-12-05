@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<f:view
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+    <h:head>
+        <h:outputStylesheet library="css" name="main.css"/>
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <p:menubar>
+                <p:menuitem value="Create Product" onclick="PF('editView').show();"/>
+            </p:menubar>
+            <br/>
+            <h:panelGroup id="productList">
+                <p:dataTable var="p" value="#{productManagedBean.products}">
+                    <p:column headerText="Id">
+                        <h:outputText value="#{p.productId}"/>
+                    </p:column>
+
+                    <p:column headerText="Name">
+                        <h:outputText value="#{p.productName}"/>
+                    </p:column>
+
+                    <p:column headerText="Action">
+                        <h:commandButton value="Delete" action="#{productManagedBean.deleteProduct(p)}">
+                            <f:ajax execute="@form"  render="@form"/>
+                        </h:commandButton>
+                    </p:column>
+                </p:dataTable>
+            </h:panelGroup>
+
+            <p:dialog header="Modal Dialog" widgetVar="editView" modal="true" height="400" width="350">
+                <h:panelGroup id="editPanel">
+                    <h:panelGroup>
+                        <h3>Product Name</h3>
+                        <p:inputText value="#{productManagedBean.productName}"/>
+                    </h:panelGroup>
+                    <hr/>
+                    <h:commandButton value="Save" action="#{productManagedBean.saveProduct}">
+                        <f:ajax execute="editPanel" render="productList"/>
+                    </h:commandButton>
+                </h:panelGroup>
+            </p:dialog>
+        </h:form>
+    </h:body>
+</f:view>
