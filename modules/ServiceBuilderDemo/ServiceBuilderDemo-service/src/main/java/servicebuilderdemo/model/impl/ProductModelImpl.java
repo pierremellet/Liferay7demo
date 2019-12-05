@@ -104,11 +104,11 @@ public class ProductModelImpl
 	public static final String ORDER_BY_SQL =
 		" ORDER BY Retail_Product.productId ASC";
 
-	public static final String DATA_SOURCE = "liferayDataSource";
+	public static final String DATA_SOURCE = "extDataSource";
 
-	public static final String SESSION_FACTORY = "liferaySessionFactory";
+	public static final String SESSION_FACTORY = "extDataSource";
 
-	public static final String TX_MANAGER = "liferayTransactionManager";
+	public static final String TX_MANAGER = "extDataSource";
 
 	public static final long COMPANYID_COLUMN_BITMASK = 1L;
 

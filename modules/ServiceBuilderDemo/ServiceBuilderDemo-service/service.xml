@@ -4,7 +4,7 @@
 <service-builder dependency-injector="ds" package-path="servicebuilderdemo">
 	<namespace>Retail</namespace>
 
-	<entity local-service="true" name="Product" remote-service="false" uuid="true">
+	<entity local-service="true" name="Product" remote-service="false" uuid="true" data-source="extDataSource" session-factory="extDataSource" tx-manager="extDataSource">
 		<column name="productId" primary="true" type="long" />
 		<column name="groupId" type="long" />
 		<column name="companyId" type="long" />
