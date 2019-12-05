@@ -1,0 +1,10 @@
+Bundle-Name: ServiceBuilderDemo-api
+Bundle-SymbolicName: servicebuilderdemo.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	servicebuilderdemo.exception,\
+	servicebuilderdemo.model,\
+	servicebuilderdemo.service,\
+	servicebuilderdemo.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../ServiceBuilderDemo-service/service.xml
