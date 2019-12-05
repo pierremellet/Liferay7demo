@@ -10,7 +10,13 @@
         <h:outputStylesheet library="css" name="main.css"/>
     </h:head>
     <h:body>
+        <a href="http://localhost:8080/o/retails/products">http://localhost:8080/o/retails/products</a>
+        <pre>
+            Configuration > Service Access Policy
 
+            service class = restdemo.application.RESTDemoApplication
+            method name = *
+        </pre>
         <h:form>
             <p:menubar>
                 <p:menuitem value="Create Product" onclick="PF('editView').show();"/>

@@ -1,0 +1,5 @@
+Bundle-Name: RESTDemo
+Bundle-SymbolicName: restdemo
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration
+-metatype: *
